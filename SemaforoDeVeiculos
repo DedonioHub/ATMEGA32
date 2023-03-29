@@ -1,0 +1,21 @@
+
+int main(void)
+{
+	DDRD = 0b00000111;	// CONFIGURANDO PORTA D0, D1, D2 COMO SAÍDAS
+	
+  	while(1)
+    {
+      
+      PORTD = 0b00000001; //LED VERDE LIGADO
+      _delay_ms(5000);
+
+      
+	  PORTD = 0b00000010; //LED AMARELO LIGADO
+      _delay_ms(2000);
+      
+      
+      PORTD = 0b00000100; //LED VERMELHO LIGADO
+      _delay_ms(4000);
+
+    }
+}
