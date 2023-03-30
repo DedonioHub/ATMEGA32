@@ -1,0 +1,42 @@
+int main(void)
+{
+
+// CONFIGURANDO PORTA D0, D1, D2 COMO SAÍDAS
+
+	DDRD = 0b00011111;	
+	
+  	while(1)
+    {
+      
+//SINAL VERDE VEICULO LIGADO - SINAL VERMELHO PEDESTRE LIGADO 
+
+      PORTD = 0b00001001; 
+      _delay_ms(10000);
+
+
+//SINAL AMARELO VEICULO LIGADO - SINAL VERMELHO PEDESTRE LIGADO
+
+	  PORTD = 0b00001010;
+      _delay_ms(2000);
+      
+      
+//SINAL VERMELHO VEICULO LIGADO - SINAL VERDE PEDESTRE LIGADO
+
+      PORTD = 0b00010100; 
+      _delay_ms(2000);
+      
+      
+      //PISCA O VERDE PEDESTRE 2 VEZES...
+      
+      PORTD = 0b00000100;
+      _delay_ms(1000);
+      PORTD = 0b00010100;
+      _delay_ms(1000);
+      PORTD = 0b00000100;
+      _delay_ms(1000);
+      PORTD = 0b00010100;
+      _delay_ms(1000);
+     
+     
+      }
+}
