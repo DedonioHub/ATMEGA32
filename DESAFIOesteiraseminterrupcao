@@ -1,0 +1,15 @@
+int main(void)
+{
+	DDRD = 0b00011111;	// CONFIGURANDO PORTAS COMO SAIDA
+	
+  	for(;;)
+    {
+     
+      PORTD = 0b000010001;
+      _delay_ms(2000);
+      PORTD = 0b00001010;
+      _delay_ms(3000);
+      PORTD = 0b00010100;
+      _delay_ms(2000);
+      }
+}
